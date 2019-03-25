@@ -25,7 +25,7 @@ namespace Projenet
             {
                 SqlConnection signUp = DatabaseConnection.ConnectionDB();
                 SqlCommand sqlcmd = new SqlCommand("UserAdd", signUp);
-                string passwordCrypto = MD5(txtPassword.Text.Trim());
+                string passwordCrypto = Encrypt(txtPassword.Text.Trim());
                 sqlcmd.CommandType = CommandType.StoredProcedure;
                 sqlcmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                 sqlcmd.Parameters.AddWithValue("@Surname", txtSurname.Text.Trim());
@@ -51,25 +51,31 @@ namespace Projenet
         {
             clear();
         }
-        public string MD5(string strPass)
+        public string Encrypt(string strPass)
         {
+            string hash = "f0xle@rn";
+
             if (strPass == "" || strPass == null)
             {
                 throw new ArgumentNullException("Şifrelenecek veri yok");
             }
             else
             {
-                MD5CryptoServiceProvider sifre = new MD5CryptoServiceProvider();
-                byte[] aryPassword = ByteTransformation(strPass);
-                byte[] aryHash = sifre.ComputeHash(aryPassword);
-                return BitConverter.ToString(aryHash);
+                byte[] data = UTF8Encoding.UTF8.GetBytes(strPass);
+                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                {
+                    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                    {
+                        using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                        {
+                            ICryptoTransform transform = tripDes.CreateEncryptor();
+                            byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                            string encryptPassword = Convert.ToBase64String(results, 0, results.Length);
+                            return encryptPassword;
+                        }
+                    }
+                }
             }
-        }
-
-        public static byte[] ByteTransformation(string value)
-        {
-            UnicodeEncoding ByteConverter = new UnicodeEncoding();
-            return ByteConverter.GetBytes(value);
         }
 
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

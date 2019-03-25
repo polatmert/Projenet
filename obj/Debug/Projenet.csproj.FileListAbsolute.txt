@@ -11,3 +11,11 @@ c:\users\polat\documents\visual studio 2013\Projects\Projenet\Projenet\obj\Debug
 D:\DERSLER\Github'a eklenenler\Projenet\Projenet\bin\Debug\Projenet.exe.config
 D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.exe
 D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.pdb
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\bin\Debug\Projenet.exe
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\bin\Debug\Projenet.pdb
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.FrmLogin.resources
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.SıgnUp.resources
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.Properties.Resources.resources
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.csproj.GenerateResource.Cache
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.csprojResolveAssemblyReference.cache
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.Card.resources
