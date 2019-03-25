@@ -1,0 +1,76 @@
+﻿
+///////////////////////////////////////////////////////////////////////////////
+
+USE [ProjenetDb]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Users](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
+	[Surname] [nvarchar](50) NULL,
+	[Username] [nvarchar](50) NOT NULL,
+	[Password] [nvarchar](50) NOT NULL,
+	[Email] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+USE [ProjenetDb]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[UserAdd]
+@Name nvarchar(50),
+@Surname nvarchar(50),
+@Username nvarchar(50),
+@Password nvarchar(50),
+@Email nvarchar(50)
+As
+	Insert Into Users (Name,Surname,Username,Password,Email)
+	Values(@Name,@Surname,@Username,@Password,@Email)
+GO
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+USE [ProjenetDb]
+GO
+
+/****** Object:  StoredProcedure [dbo].[UserLogin]    Script Date: 25.03.2019 22:09:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+Create Proc [dbo].[UserLogin]
+@Username nvarchar(50) ='',
+@Password nvarchar (50)=''
+As
+Begin
+	if Exists (Select Name from Users Where Username =@Username AND [Password] = @Password)
+begin	
+select [Name] from Users where Username=@Username ;
+end
+end
+GO
+
+
+
