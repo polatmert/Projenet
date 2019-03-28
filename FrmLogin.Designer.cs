@@ -34,6 +34,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linklblSignUp = new System.Windows.Forms.LinkLabel();
             this.btnlogin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linklblSignUp);
             this.groupBox1.Controls.Add(this.btnlogin);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtUsername);
@@ -91,6 +93,17 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Information";
+            // 
+            // linklblSignUp
+            // 
+            this.linklblSignUp.AutoSize = true;
+            this.linklblSignUp.Location = new System.Drawing.Point(210, 147);
+            this.linklblSignUp.Name = "linklblSignUp";
+            this.linklblSignUp.Size = new System.Drawing.Size(54, 17);
+            this.linklblSignUp.TabIndex = 7;
+            this.linklblSignUp.TabStop = true;
+            this.linklblSignUp.Text = "SignUp";
+            this.linklblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblSignUp_LinkClicked);
             // 
             // btnlogin
             // 
@@ -126,5 +139,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnlogin;
+        private System.Windows.Forms.LinkLabel linklblSignUp;
     }
 }

@@ -37,6 +37,11 @@ namespace Projenet
                 {
                     Card card = new Card();
                     card.Show();
+
+                    FrmLogin frmLogin = new FrmLogin();
+                    frmLogin.Close();
+
+                    this.Hide();
                 }
                 else
                 {
@@ -95,5 +100,17 @@ namespace Projenet
                 }
             }
         }
+
+        private void linklblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Close();
+
+            SıgnUp frmSignUp = new SıgnUp();
+            frmSignUp.Show();
+
+            this.Hide();
+        }
+
     }
 }
