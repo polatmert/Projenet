@@ -21,3 +21,4 @@ D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.Properties.R
 D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.csproj.GenerateResource.Cache
 D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.exe
 D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.pdb
+D:\DERSLER\Github'a eklenenler\Projenet\Projenet\obj\Debug\Projenet.csprojResolveAssemblyReference.cache
